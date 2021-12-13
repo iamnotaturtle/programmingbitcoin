@@ -405,6 +405,7 @@ class S256Point(Point):
         return total.x.num == sig.r
 
     # tag::source1[]
+    # Standards for Efficient Cryptography
     def sec(self, compressed=True):
         '''returns the binary version of the SEC format'''
         if compressed:
@@ -556,6 +557,7 @@ class Signature:
         return 'Signature({:x},{:x})'.format(self.r, self.s)
 
     # tag::source4[]
+    # Distinguished Encoding Rules
     def der(self):
         rbin = self.r.to_bytes(32, byteorder='big')
         # remove all null bytes at the beginning
